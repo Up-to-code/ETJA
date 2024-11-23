@@ -9,8 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { toast } from "@/hooks/use-toast"
-// Removed the import for toast as it cannot be found
+ // Removed the import for toast as it cannot be found
 
 export function UploadForm() {
   const [title, setTitle] = useState("")
@@ -37,19 +36,12 @@ export function UploadForm() {
         createdAt: new Date()
       })
 
-      toast({
-        title: "Upload successful",
-        description: "Your media has been uploaded.",
-      })
+      
 
       router.push("/media")
     } catch (error) {
       console.error("Error uploading file: ", error)
-      toast({
-        title: "Upload failed",
-        description: "There was an error uploading your media.",
-        variant: "destructive",
-      })
+ 
     } finally {
       setUploading(false)
     }
